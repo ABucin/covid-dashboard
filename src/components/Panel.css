@@ -1,0 +1,40 @@
+h3 {
+    font-family: 'Oswald', serif;
+    font-weight: 300;
+}
+
+/*.label-reference {*/
+/*    fill: #c5c5c5;*/
+/*    text-shadow: 1px 1px 1px #111;*/
+/*}*/
+
+/*.label-reference text {*/
+/*    transform: translateY(-235px);*/
+/*}*/
+
+/*.label-white {*/
+/*    fill: white;*/
+/*    text-shadow: 1px 1px 1px #111;*/
+/*}*/
+
+.chartContainer {
+    height: 600px;
+}
+
+svg {
+    shape-rendering: crispEdges;
+}
+
+/*.chartContainer svg text {*/
+/*    fill: #c5c5c5;*/
+/*}*/
+
+/*@media (max-width: 750px) {*/
+/*    .label {*/
+/*        fill: #c5c5c5;*/
+/*    }*/
+
+/*    .label-reference text {*/
+/*        transform: translateY(-95px);*/
+/*    }*/
+/*}*/
