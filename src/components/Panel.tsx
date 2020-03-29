@@ -63,7 +63,7 @@ const chartTheme = {
  * @param d
  */
 const formatDate = (d: ReactText) => {
-  return moment(d).format('DD.MM');
+  return moment(d).format('DD MMM');
 };
 /**
  * Generates chart marker lines.
@@ -111,21 +111,24 @@ function Panel(props: any) {
   return (
 	  <div>
 		<h3>2020 Romanian COVID-19 cases</h3>
-		<Status
-			text={'Confirmed'}
-			currentCount={props.current.Confirmed}
-			previousCount={props.previous.Confirmed}
-		/>
-		<Status
-			text={'Deaths'}
-			currentCount={props.current.Deaths}
-			previousCount={props.previous.Deaths}
-		/>
-		<Status
-			text={'Recovered'}
-			currentCount={props.current.Recovered}
-			previousCount={props.previous.Recovered}
-		/>
+		<div style={{margin: 5}}>
+		  <Status
+			  text={'Latest confirmed'}
+			  currentCount={props.current.Confirmed}
+			  previousCount={props.previous.Confirmed}
+		  />
+		  <Status
+			  text={'Latest deaths'}
+			  currentCount={props.current.Deaths}
+			  previousCount={props.previous.Deaths}
+		  />
+		  <Status
+			  reverse={true}
+			  text={'Latest recovered'}
+			  currentCount={props.current.Recovered}
+			  previousCount={props.previous.Recovered}
+		  />
+		</div>
 		<div className={'chart-bar'} style={{height: 600, width: chartWidth}}>
 		  <ResponsiveBar
 			  data={props.data}
@@ -144,10 +147,10 @@ function Panel(props: any) {
 			  axisTop={axisTop}
 			  labelTextColor={labelTextColor}
 			  markers={[
-				generateMarker('2020-03-04T00:00:00Z', green, 'First recoveries'),
-				generateMarker('2020-03-16T00:00:00Z', yellow, 'Emergency state'),
-				generateMarker('2020-03-22T00:00:00Z', red, 'First deaths'),
-				generateMarker('2020-03-25T00:00:00Z', yellow, 'Full lockdown'),
+				generateMarker(isMobile ? '2020-03-03T00:00:00Z' : '2020-03-04T00:00:00Z', green, 'First recoveries'),
+				generateMarker(isMobile ? '2020-03-15T00:00:00Z' : '2020-03-16T00:00:00Z', yellow, 'Emergency state'),
+				generateMarker(isMobile ? '2020-03-21T00:00:00Z' : '2020-03-22T00:00:00Z', red, 'First deaths'),
+				generateMarker(isMobile ? '2020-03-24T00:00:00Z' : '2020-03-25T00:00:00Z', yellow, 'Full lockdown'),
 			  ]}
 			  tooltip={chartTooltip}
 			  legends={[
