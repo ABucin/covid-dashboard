@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Panel from "./components/Panel";
+import moment from "moment";
 
 export default class extends React.Component<any, any> {
   constructor(props: any) {
@@ -38,6 +39,11 @@ export default class extends React.Component<any, any> {
       return result;
     });
 
+    // workaround to have the latest data shown
+    data.push({
+      Date: moment().add(1, 'd').toString(),
+    });
+
     this.setState({data});
   }
 
@@ -45,6 +51,9 @@ export default class extends React.Component<any, any> {
     return (
         <div className="App">
           <Panel data={this.state.data} />
+          <div className={'footer'}>
+            By Andrei Bucin
+          </div>
         </div>
     );
   }

@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-footer {
-  padding-top: 10px;
-  font-weight: 300;
+.footer {
   font-size: 10px;
+  font-weight: 300;
+  padding-top: 50px;
   text-align: center;
 }
