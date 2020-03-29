@@ -5,6 +5,18 @@
 .footer {
   font-size: 10px;
   font-weight: 300;
-  padding-top: 50px;
+  padding-top: 100px;
   text-align: center;
+}
+
+.label {
+  color: #c5c5c5;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px #111;
+}
+
+h3 {
+  font-family: 'Oswald', serif;
+  font-weight: 300;
+  margin: 10px;
 }

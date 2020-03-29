@@ -1,8 +1,8 @@
-h3 {
-    font-family: 'Oswald', serif;
-    font-weight: 300;
+.chart-bar svg {
+    shape-rendering: crispEdges;
 }
 
-svg {
-    shape-rendering: crispEdges;
+/* Add shadow to all white text in chart labels so it's better visible*/
+.chart-bar svg text[style*="fill: white"] {
+    text-shadow: 1px 1px 1px #111;
 }

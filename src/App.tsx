@@ -9,6 +9,8 @@ export default class extends React.Component<any, any> {
 
     this.state = {
       data: [],
+      current: {},
+      previous: {},
     };
   }
 
@@ -39,18 +41,21 @@ export default class extends React.Component<any, any> {
       return result;
     });
 
+    const current = Object.assign({}, data[data.length - 1]);
+    const previous = Object.assign({}, data[data.length - 2]);
+
     // workaround to have the latest data shown
     data.push({
       Date: moment().add(1, 'd').toString(),
     });
 
-    this.setState({data});
+    this.setState({data, current, previous});
   }
 
   render() {
     return (
         <div className="App">
-          <Panel data={this.state.data} />
+          <Panel data={this.state.data} current={this.state.current} previous={this.state.previous} />
           <div className={'footer'}>
             By Andrei Bucin
           </div>
